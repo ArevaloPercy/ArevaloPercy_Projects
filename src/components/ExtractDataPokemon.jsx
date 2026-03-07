@@ -10,7 +10,6 @@ const ExtractDataPokemon = ({setPokemondongo}) => {
         console.log(data )
         setPokemondongo (data.sprites.other.home.front_default)
 
-
     }
 
 
