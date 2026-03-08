@@ -13,23 +13,35 @@ function App() {
 
 
   return (
-    <>
+    <div>
     <h1>Apis & Fetch </h1>
     <p>API Rick & Morty</p>
     <ExtractDataRickMorty setList={setList}/>
-    {list.map((character,index)=> <img key={index} src={character.image} alt={character.name} />)}
+    
+    {/*{list.map((character,index)=> <img key={index} src={character.image} alt={character.name} />)}*/}
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4, 1fr)'}}>
+        {list.map((character,index)=>(
+        <div key={index} style={{ display:'grid', backgroundColor:'#2a2a2a', marginBottom:'20px',padding:'15px'}}>
+          <h3>{character.name}</h3>
+          <img key={index} src={character.image} alt={character.name} />
+        </div>
+            ))}
+    </div>
     <hr />
     
+
     <p>Api Pokemon</p>
     <ExtractDataPokemon setPokemondongo={setPokemondongo}/>
     <img src={pokemondongo} alt={pokemondongo} />
-
     <hr />
+
+
     <p>Api GitHub</p>
     <ExtraDataGitHub setUserGitHub={setUserGitHub} />
     <img src={userGitHub} alt ={userGitHub}/>
-
     <hr />
+
+    
     <p>Api Data Meal BD</p>
     {/*Pasamos la función que actualiza el estado */}
     <ExtractDataMeal setDataMeal={setDataMeal}/>
@@ -43,7 +55,7 @@ function App() {
         />
       </div>
     )}
-    </>
+    </div>
   )
 }
 
